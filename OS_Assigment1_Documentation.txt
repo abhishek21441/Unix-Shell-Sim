@@ -1,0 +1,121 @@
+﻿OS_Assigment1_Documentation
+
+
+Working of the Shell:
+The shell runs infinitely until the exit command “exit” is entered by the user or Ctrl + C is used.
+The shell opens with the current directory where the shell program itself runs, from there the user can run the following commands:
+
+
+
+
+
+
+
+
+1. Internal
+1. cd: Used to change directory
+Options for the flags are ~ and / other than the usual [directory] , “.” and “..”.
+~ : Takes the user to the home directory.
+/  : Takes the user to the root.
+
+
+2.  echo : Used to print out text
+ Options for the flags are -n other than the usual [text] to be printed.
+-n :Does not follow the entered text with a newline character.
+
+
+3. pwd: Used to obtain the present working directory
+Options for the flags are -L and -P other than the usual [].
+-L :Prints out the symbolic positioning of the current directory.
+-P :Prints out the physical positioning of the current directory.
+
+
+
+
+2. External 
+
+
+
+
+1. ls: Used to display contents of current directory
+Options for the flags are -m and -A other than the usual [] .
+-m : It separates the contents using “,”.
+-A : It separates the contents (Other than “.” and “..”) by a newline character. 
+
+
+
+
+
+
+
+
+2. cat: Used to print out text
+Options for the flags are -n and -e other than the usual [filenamet] to be read.
+-n :Numbers the lines of the files from 1 onwards.
+-e : Ends each line with a $ symbol
+
+
+3. date: Used to display system date and time
+Options for the flags are -u and -R other than the usual [].
+-u :Prints out the date in UTC format.
+-R :Prints out the date in date, month format.
+
+
+4. mkdir: Used to create a new directory of the given name with default access.
+Options for flags are -v and -P other than the usual [Directory name].
+-v : Asks the user for confirmation and prints out a message incase of an error
+-P : Creates intermediate directories as required
+
+
+5. rm: Used to delete files given by the user
+Options are -i and -v other than the usual [File name].
+-i : Asks for users permission before deleting file
+-v : Informs user that the file is being deleted
+
+
+
+
+Other cases that have been taken care of are:
+
+
+1. Empty or simply newline entries are ignored by the shell.
+2. In case of commands where files don't exist, necessary error messages are printed.
+3. In case users enter command flags that are not part of the shell description, necessary error messages are printed.
+
+
+In case the last argument passed by the user is “&t” the command is executed via a thread that calls the necessary external file. And in case there is no such final argument, the process is carried out via fork.
+
+
+
+
+
+
+
+
+TestCases:
+ls -m
+date
+mkdir new
+cat hello.txt
+
+
+cd new
+pwd
+echo shell
+cd ..
+pwd
+
+
+
+
+//error generation
+
+
+ls -la
+
+
+
+
+
+
+cd new dir
